@@ -1,0 +1,31 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-env src/index.ts",
+    "dev": "denon start"
+  },
+
+  "lint": {
+    "files": {
+      "include": ["src/", "test/"],
+      "exclude": ["test/data/"]
+    },
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"]
+    }
+  },
+
+  "fmt": {
+    "files": {
+      "include": ["src/", "test/"],
+      "exclude": ["test/data/"]
+    },
+    "options": {
+      "useTabs": false,
+      "lineWidth": 120,
+      "indentWidth": 2,
+      "singleQuote": true,
+      "proseWrap": "preserve"
+    }
+  }
+}

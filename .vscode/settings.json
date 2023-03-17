@@ -1,0 +1,24 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.enablePaths": ["./api"],
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true,
+    "https://x.nest.land": true,
+    "https://crux.land": true,
+    "http://deno.land": false
+  },
+  "deno.unstable": true,
+  "cSpell.words": [
+    "dbaeumer",
+    "deno",
+    "Deno",
+    "denoland",
+    "denon",
+    "Denon",
+    "esbenp",
+    "Hono",
+    "pflannery",
+    "usernamehw"
+  ]
+}
