@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     'jsx-quotes': ['error', 'prefer-double'],
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
     '@typescript-eslint/space-before-function-paren': [
       'error',
       {

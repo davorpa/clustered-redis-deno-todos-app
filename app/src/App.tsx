@@ -1,7 +1,12 @@
+import { useState } from 'react'
+import Todos from './components/Todos'
+import { type TodosSlice } from './types'
 
 function App(): JSX.Element {
+  const [todos] = useState<TodosSlice>([])
+
   return (
-    <h1>Todo MVC TS</h1>
+    <Todos datalist={todos} />
   )
 }
 
