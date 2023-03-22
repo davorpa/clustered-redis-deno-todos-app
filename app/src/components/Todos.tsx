@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { type TodosSlice } from '../types'
 
 interface Props {
@@ -8,7 +9,7 @@ const Todos: React.FC<Props> = ({ datalist }) => {
   return (
     <ul>
       {datalist.map((item) => (
-        <li key={item.id}>
+        <li key={item.id} className={clsx({ completed: item.done })}>
           {item.title}
         </li>
       ))}
