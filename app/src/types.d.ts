@@ -1,17 +1,14 @@
-type TodoId = string
-type TodoTitle = string
-type TodoDescription = string
-type TodoCompleted = boolean
-type TodoCreatedAt = Date
-type TodoUpdatedAt = Date
+export type TodoId = string
+export type BoolAlike = boolean
+export type DateAlike = Date
 
 export interface Todo {
   id: TodoId
-  title: TodoTitle
-  description?: TodoDescription
-  done: TodoCompleted
-  createdAt: TodoCreatedAt
-  updatedAt: TodoUpdatedAt
+  title: string
+  description?: string
+  done: BoolAlike
+  createdAt: DateAlike
+  updatedAt: DateAlike
 }
 
 export type TodosSlice = Todo[]
