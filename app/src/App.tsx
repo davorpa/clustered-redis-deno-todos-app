@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FiltersEnumValues, type FiltersEnum } from './components/Filters'
+import Footer from './components/Footer'
 import Todos from './components/Todos'
 import { type TodoId, type TodosSlice } from './types'
 
@@ -18,6 +20,8 @@ const mockedTodos = [{
 
 function App(): JSX.Element {
   const [todos, setTodos] = useState<TodosSlice>(mockedTodos)
+  const [selectedFilter, setSelectedFilter] = useState<FiltersEnum>(
+    FiltersEnumValues.ALL)
 
   const handleRemove = (id: TodoId): void => {
     setTodos(todos => todos.filter((item) => item.id !== id))
@@ -36,12 +40,31 @@ function App(): JSX.Element {
     }))
   }
 
+  const handleFilterChange = (filter: FiltersEnum): void => {
+    setSelectedFilter(filter)
+  }
+
+  const activeCount = todos.filter((item) => !item.done).length
+  const completedCount = todos.length - activeCount
+
+  const filteredTodos = todos.filter((item) => {
+    if (selectedFilter === FiltersEnumValues.ACTIVE) return !item.done
+    if (selectedFilter === FiltersEnumValues.COMPLETED) return item.done
+    return true
+  })
+
   return (
     <div className="todoapp">
       <Todos
-        datalist={todos}
+        datalist={filteredTodos}
         onRemove={handleRemove}
         onToggleCompleted={handleCompleted}
+        />
+      <Footer
+        activeCount={activeCount}
+        completedCount={completedCount}
+        selectedFilter={selectedFilter}
+        onFilterChange={handleFilterChange}
         />
     </div>
   )
