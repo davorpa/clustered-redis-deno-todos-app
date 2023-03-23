@@ -4,14 +4,15 @@ import { type TodoId, type Todo as TodoType } from '../types'
 interface Props {
   data: TodoType
   onRemove: (id: TodoId) => void
+  onToggleCompleted: (id: TodoId) => void
 }
 
-const Todo: React.FC<Props> = ({ data, onRemove }) => {
+const Todo: React.FC<Props> = ({ data, onRemove, onToggleCompleted }) => {
   const { id, title, done, createdAt, updatedAt } = data
   const inputId = useId()
 
   const handleCompletedChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    console.log(event.target.checked)
+    onToggleCompleted(id)
   }
 
   const handleDestroyClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
@@ -30,7 +31,8 @@ const Todo: React.FC<Props> = ({ data, onRemove }) => {
         name="completed"
         className="toggle"
         defaultChecked={done}
-        onChange={handleCompletedChange} />
+        onChange={handleCompletedChange}
+        />
       <label htmlFor={inputId}>{title}</label>
       <button className="destroy" onClick={handleDestroyClick}/>
     </div>
