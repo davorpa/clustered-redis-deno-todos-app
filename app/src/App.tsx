@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { FiltersEnumValues, type FiltersEnum } from './components/Filters'
 import Footer from './components/Footer'
 import Todos from './components/Todos'
-import { type TodoId, type TodosSlice } from './types'
+import { FiltersEnumValues } from './constants'
+import { type TodoId, type TodosSlice, type FiltersEnum } from './types'
 
 const mockedTodos = [{
   id: '1',

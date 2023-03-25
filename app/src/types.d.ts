@@ -1,3 +1,5 @@
+import { type FiltersEnumValues } from './constants'
+
 export type TodoId = string
 export type BoolAlike = boolean
 export type DateAlike = Date
@@ -12,3 +14,5 @@ export interface Todo {
 }
 
 export type TodosSlice = Todo[]
+
+export type FiltersEnum = typeof FiltersEnumValues[keyof typeof FiltersEnumValues]

@@ -1,4 +1,5 @@
-import Filters, { type FiltersEnum } from './Filters'
+import { type FiltersEnum } from '../types'
+import Filters from './Filters'
 
 interface Props {
   activeCount: number

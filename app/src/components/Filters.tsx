@@ -1,12 +1,6 @@
 import clsx from 'clsx'
-
-export const FiltersEnumValues = {
-  ALL: 'all',
-  ACTIVE: 'active',
-  COMPLETED: 'completed',
-} as const
-
-export type FiltersEnum = typeof FiltersEnumValues[keyof typeof FiltersEnumValues]
+import { FiltersEnumValues } from '../constants'
+import { type FiltersEnum } from '../types'
 
 const FiltersButtons = {
   [FiltersEnumValues.ALL]: {
