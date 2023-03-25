@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import Todos from './components/Todos'
 import { FiltersEnumValues } from './constants'
 import { type TodoId, type TodosSlice, type FiltersEnum } from './types'
@@ -48,6 +49,16 @@ function App(): JSX.Element {
     setTodos(todos => todos.filter((item) => !item.done))
   }
 
+  const handleCreate = (title: string): void => {
+    setTodos(todos => [...todos, {
+      id: crypto.randomUUID(),
+      title,
+      done: false,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }])
+  }
+
   const activeCount = todos.filter((item) => !item.done).length
   const completedCount = todos.length - activeCount
 
@@ -59,6 +70,8 @@ function App(): JSX.Element {
 
   return (
     <div className="todoapp">
+      <Header
+        onCreate={handleCreate} />
       <Todos
         datalist={filteredTodos}
         onRemove={handleRemove}
