@@ -10,7 +10,7 @@
 - [x] Marcar TODO como completado
 - [x] Agregar forma de filtrar TODOs (Footer)
 - [x] Mostrar número de TODOs pendientes (Footer)
-- [ ] Agregar forma de borrar todos los TODOs completados
+- [x] Agregar forma de borrar todos los TODOs completados
 - [ ] Crear Header con input (Header)
 - [ ] Crear un TODO (Header)
 - [ ] Poder editar el texto de un TODO (doble click)
